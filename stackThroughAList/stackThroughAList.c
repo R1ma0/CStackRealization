@@ -3,17 +3,19 @@
 
 int main(void) 
 {
-	struct PlateStack plates;
-	struct Plate plate1 = {15, 150, "red"};
-	plates.plateData = &plate1;
+	struct Plate *platesStack = NULL;
+	struct PlateData plate1 = {15, 150, "red"};
+	struct PlateData plate2 = {10, 144, "green"};
 
-	struct PlateStack plates1;
-	struct Plate plate2 = {13, 144, "green"};
-	plates1.top = &plates;
-	plates1.plateData = &plate2;
+	psPush(&platesStack, &plate1);
+	psPush(&platesStack, &plate2);
 
-	printf("Plates1 plate radius = %d\n", plates1.plateData->radius);
-	printf("Plates plate radius = %d\n", plates1.top->plateData->radius);
+	int stackSize = psSize(&platesStack);
+	printf("Stack size = %d\n", stackSize);
+
+	printf("Radius = %d\n", platesStack->plateData->radius);
+	printf("Price = %d\n", platesStack->plateData->price);
+	printf("Color = %s\n", platesStack->plateData->color);
 
 	return 0;
 }
