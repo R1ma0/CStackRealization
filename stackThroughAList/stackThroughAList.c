@@ -8,7 +8,7 @@ int main(void)
 	plates.plateData = &plate1;
 
 	struct PlateStack plates1;
-	struct Plate plate2 = {12, 144, "green"};
+	struct Plate plate2 = {13, 144, "green"};
 	plates1.top = &plates;
 	plates1.plateData = &plate2;
 
