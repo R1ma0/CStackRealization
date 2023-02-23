@@ -74,4 +74,16 @@ void psClear(struct Plate **stackHead)
 	}
 }
 
+void psPrint(struct Plate **stackHead)
+{
+	struct Plate *tmp = *stackHead;
+
+	while (tmp != NULL)
+	{
+		struct PlateData *tmpData = tmp->plateData;
+		printf("%d %d %s\n", tmpData->radius, tmpData->price, tmpData->color);
+		tmp = tmp->top;
+	}
+}
+
 #endif
