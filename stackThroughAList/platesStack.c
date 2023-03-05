@@ -5,7 +5,7 @@
 
 void platesStackPush(struct PlatesStack **stackHead, struct PlateData *data)
 {
-	struct PlatesStack *newStack = malloc(sizeof(struct PlatesStack));
+	struct PlatesStack *newStack = malloc(sizeof *newStack);
 	newStack->top = *stackHead;
 	newStack->data = data;
 	*stackHead = newStack;
@@ -13,14 +13,7 @@ void platesStackPush(struct PlatesStack **stackHead, struct PlateData *data)
 
 struct PlatesStack *platesStackPeek(struct PlatesStack **stackHead)
 {
-	struct PlatesStack *stack = malloc(sizeof(struct PlatesStack));
-	struct PlateData *data = malloc(sizeof(struct PlateData));
-
-    data = (*stackHead)->data;
-	stack->data = data;
-	stack->top = (*stackHead)->top;
-
-	return stack;
+	return *stackHead;
 }
 
 struct PlatesStack *platesStackPop(struct PlatesStack **stackHead)
@@ -29,6 +22,7 @@ struct PlatesStack *platesStackPop(struct PlatesStack **stackHead)
 
 	struct PlatesStack *oldStackHead = *stackHead;
 	*stackHead = (*stackHead)->top;
+
 	free(oldStackHead);
 
 	return stack;
