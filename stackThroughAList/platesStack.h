@@ -15,8 +15,8 @@ struct PlatesStack
 };
 
 void platesStackPush(struct PlatesStack **stackHead, struct PlateData *data);
-struct PlatesStack *platesStackPeek(struct PlatesStack **stackHead);
-struct PlatesStack *platesStackPop(struct PlatesStack **stackHead);
+struct PlateData platesStackPeek(struct PlatesStack **stackHead);
+struct PlateData platesStackPop(struct PlatesStack **stackHead);
 int getPlatesStackSize(struct PlatesStack **stackHead);
 void platesStackFree(struct PlatesStack **stackHead);
 void platesStackPrint(struct PlatesStack **stackHead);

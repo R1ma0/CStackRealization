@@ -11,21 +11,26 @@ void platesStackPush(struct PlatesStack **stackHead, struct PlateData *data)
 	*stackHead = newStack;
 }
 
-struct PlatesStack *platesStackPeek(struct PlatesStack **stackHead)
+struct PlateData platesStackPeek(struct PlatesStack **stackHead)
 {
-	return *stackHead;
+	struct PlateData data;
+
+	data.radius = (*stackHead)->data->radius;
+	data.price = (*stackHead)->data->price;
+	strcpy(data.color, (*stackHead)->data->color);
+
+	return data;
 }
 
-struct PlatesStack *platesStackPop(struct PlatesStack **stackHead)
+struct PlateData platesStackPop(struct PlatesStack **stackHead)
 {
-	struct PlatesStack *stack = platesStackPeek(&(*stackHead));
-
+	struct PlateData data = platesStackPeek(&(*stackHead));
 	struct PlatesStack *oldStackHead = *stackHead;
-	*stackHead = (*stackHead)->top;
 
+	*stackHead = (*stackHead)->top;
 	free(oldStackHead);
 
-	return stack;
+	return data;
 }
 
 int getPlatesStackSize(struct PlatesStack **stackHead)
