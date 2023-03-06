@@ -20,7 +20,6 @@ int main(void)
         scanf("%d", &plate1.radius);
         scanf("%d", &plate1.price);
         scanf("%s", &plate1.color);
-        printf("\nTest: %d %d %s \n", plate1.radius, plate1.price, plate1.color);
         platesStackPush(&stack, plate1);
 
         printf("Do you want add one more plate? \n");
@@ -32,32 +31,7 @@ int main(void)
         }
     }
 
-//    struct PlateData plate1 = {15, 150, "red"};
-//	struct PlateData plate2 = {12, 100, "green"};
-//	struct PlateData plate3 = {10, 11, "yellow"};
-//
-//	platesStackPush(&stack, &plate1);
-//	platesStackPush(&stack, &plate2);
-//	platesStackPush(&stack, &plate3);
-//
-//	int stackSize = getPlatesStackSize(&stack);
-//    printf("\nStack size = %d\n", stackSize);
-//
-//	struct PlateData platesPeek = platesStackPeek(&stack);
-//	printf("\nPeek: %d %d %s \n", platesPeek.radius, platesPeek.price, platesPeek.color);
-//	platesStackPrint(&stack);
-//
-//	struct PlateData platesPop = platesStackPop(&stack);
-//	printf("\nPop: %d %d %s \n", platesPop.radius, platesPop.price, platesPop.color);
-//	platesStackPrint(&stack);
-//
-//    stackSize = getPlatesStackSize(&stack);
-//    printf("\nStack size = %d\n", stackSize);
-//
-//	printf("\nStack: \n");
-//	platesStackPrint(&stack);
-//
-//    platesStackFree(&stack);
+    platesStackFree(&stack);
 
     return 0;
 }
