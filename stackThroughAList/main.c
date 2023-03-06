@@ -21,7 +21,7 @@ int main(void)
         scanf("%d", &plate1.price);
         scanf("%s", &plate1.color);
         printf("\nTest: %d %d %s \n", plate1.radius, plate1.price, plate1.color);
-        platesStackPush(&stack, &plate1);
+        platesStackPush(&stack, plate1);
 
         printf("Do you want add one more plate? \n");
         scanf("%s", &wordchecker);

@@ -3,11 +3,17 @@
 #include <stdio.h>
 #include "platesStack.h"
 
-void platesStackPush(struct PlatesStack **stackHead, struct PlateData *data)
+void platesStackPush(struct PlatesStack **stackHead, struct PlateData data)
 {
 	struct PlatesStack *newStack = malloc(sizeof *newStack);
+	struct PlateData *newData = malloc(sizeof *newData);
+
+	newData->radius = data.radius;
+	newData->price = data.price;
+	strcpy(newData->color, data.color);
+
 	newStack->top = *stackHead;
-	newStack->data = data;
+	newStack->data = newData;
 	*stackHead = newStack;
 }
 
