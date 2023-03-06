@@ -10,7 +10,7 @@ int main(void)
     char operation[15];
 
     int notExit = 1;
-   while(notExit)
+    while(notExit)
     {
         printf("\nList of operation: push, peek, pop, size, exit\n\n");
         printf("What operation do you want to execute? \n");
