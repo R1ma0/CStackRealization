@@ -10,7 +10,7 @@ struct PlateData
 
 struct PlatesStack
 {
-    struct PlateData *data;
+    struct PlateData data;
     struct PlatesStack *top;
 };
 

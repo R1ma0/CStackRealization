@@ -6,14 +6,12 @@
 void platesStackPush(struct PlatesStack **stackHead, struct PlateData data)
 {
 	struct PlatesStack *newStack = malloc(sizeof *newStack);
-	struct PlateData *newData = malloc(sizeof *newData);
 
-	newData->radius = data.radius;
-	newData->price = data.price;
-	strcpy(newData->color, data.color);
+	newStack->data.radius = data.radius;
+	newStack->data.price = data.price;
+	strcpy(newStack->data.color, data.color);
 
 	newStack->top = *stackHead;
-	newStack->data = newData;
 	*stackHead = newStack;
 }
 
@@ -21,9 +19,9 @@ struct PlateData platesStackPeek(struct PlatesStack **stackHead)
 {
 	struct PlateData data;
 
-	data.radius = (*stackHead)->data->radius;
-	data.price = (*stackHead)->data->price;
-	strcpy(data.color, (*stackHead)->data->color);
+	data.radius = (*stackHead)->data.radius;
+	data.price = (*stackHead)->data.price;
+	strcpy(data.color, (*stackHead)->data.color);
 
 	return data;
 }
@@ -68,7 +66,7 @@ void platesStackPrint(struct PlatesStack **stackHead)
 
 	while (tmp != NULL)
 	{
-		printf("%d %d %s\n", tmp->data->radius, tmp->data->price, tmp->data->color);
+		printf("%d %d %s\n", tmp->data.radius, tmp->data.price, tmp->data.color);
 		tmp = tmp->top;
 	}
 }
