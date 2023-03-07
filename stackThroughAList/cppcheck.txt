@@ -1,0 +1,1 @@
+cppcheck --enable=all --suppress=missingIncludeSystem --inconclusive --library=posix --check-config main.c platesStack.c platesStack.h

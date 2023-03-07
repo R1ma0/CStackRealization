@@ -14,14 +14,14 @@ int main(void)
     {
         printf("\nList of operation: push, peek, pop, size, exit\n\n");
         printf("What operation do you want to execute? \n");
-        scanf("%s", operation);
+        scanf("%14s", operation);
 
         if(strcmp (operation, "push") == 0)
         {
             printf("Enter plate specifications: radius, price, colour \n");
             scanf("%d", &plate1.radius);
             scanf("%d", &plate1.price);
-            scanf("%s", plate1.color);
+            scanf("%14s", plate1.color);
             platesStackPush(&stack, plate1);
             printf("\nYour stack: \n");
             platesStackPrint(&stack);
@@ -56,7 +56,8 @@ int main(void)
             printf("\nGoodbye my dear!\n");
         }
    }
-
+	notExit = 0.5;
+	printf("%d\n", notExit);
 
     return 0;
 }
